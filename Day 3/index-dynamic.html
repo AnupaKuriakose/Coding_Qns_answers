@@ -1,0 +1,70 @@
+<!-- Dynamic Layout Switching with CSS Classes (Most Common)
+Use case
+
+Sidebar collapse / expand
+
+Compact vs full layout
+
+Admin panel toggles -->
+<!-- SEMANTIC ELEMNENTS -->
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+    
+    body {
+      margin: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+       width: 100%;
+      height: 100%;
+    }
+
+    .page {
+      display: grid;
+      grid-template-rows: 64px 1fr 64px;
+      grid-template-columns: 220px 1fr;
+      grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+        height: 100%;
+      gap: 5px;
+    }
+    header {
+      grid-area: header;
+      background: #4caf50;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    aside {
+      grid-area: sidebar;
+      background: #f4f4f4;
+      padding: 10px;
+    }
+
+    main {
+      grid-area: main;
+      background: #eaeaea;
+      padding: 10px;
+    }
+
+    footer {
+      grid-area: footer;
+      background: #333;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+  <body>
+    <div class="page">
+      <header>Header</header>
+      <aside>SideBar</aside>
+      <main>Main</main>
+      <footer>Footer</footer>
+    </div>
+  </body>
+</html>

@@ -3,7 +3,8 @@ const numbers = [ 176, 181, 182, 199, 200, 201, 202, 203, 208,
     210, 213, 214, 218, 223, 225, 226, 230, 231, 233, 235, 239, 243, 245, 246, 248, 269, 272, ];
 
 // And you want to find the longest set of consecutive numbers within that set.
-// One way to do that would be to split the array into chunks of consecutive numbers, and then find the longest of those chunks.
+// One way to do that would be to split the array into chunks of consecutive numbers, 
+// //and then find the longest of those chunks.
 
 // So you'll need an array to store those chunks:
 let chunks = [];

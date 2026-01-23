@@ -1,0 +1,58 @@
+<!-- Example: Header – Sidebar – Main Content – Footer Layout (Flexbox) -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        body{
+            height: 100vh;
+            margin:0;
+            box-sizing: border-box;
+        }
+        .header {
+            width: auto;
+            height: 80px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items:center;
+            border-bottom: 1px dotted black;
+            
+        }
+        .mainPage{
+            border: 2px dotted black;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .content {
+            display: flex;
+           flex:1; /* take remaining space.flex: 1 allows the content area to grow and shrink based on available space, making layouts responsive and adaptive." */
+        }
+        .nav {
+            /* flex-basis: 50%; */
+            width: 200px;
+        }
+        .main{
+            /* flex-basis: 50%; */
+            flex:1;
+        }
+        .footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items:center;
+            border-top: 1px dotted black;
+        }
+    </style>
+   
+    <body>
+        <script></script>
+        <div class="mainPage">
+        <div class="header">Header</div>
+        <div class="content">
+            <div class="nav">SideBar</div>
+             <div class="main">Main Content</div>
+        </div>
+        <div class="footer">Footer</div></div>
+    </body>
+</html>
