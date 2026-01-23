@@ -1,3 +1,4 @@
+//Find max and second max from array
 // initialize two variables, largest and secondLargest, to -Infinity. Loop through the array, 
 //and if an element is larger than largest, update secondLargest to largest and largest to the element.
 const arr = [5, 3, 9, 1, 9];

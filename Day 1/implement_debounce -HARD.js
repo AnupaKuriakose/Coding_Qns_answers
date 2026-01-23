@@ -21,6 +21,15 @@ dSearch("Hello, "); // call 2 (before 100ms finishes)
 // clearTimeout(timeout) ❌ cancels previous timer,New timer created,args = ["Hello, "],Waiting again...
 dSearch("Hello, World!"); //only this call should trigger after 100ms
 
+
+//1. Scope: Why args doesn't have func or delay
+// In JavaScript, a function only "sees" the arguments passed directly to it. 
+// These are separate from the variables in its outer environment. 
+// Outer Function (debounce): This is called once at the beginning to set everything up. It receives func and delay.
+// Inner Function (return function(...args)): This is the actual function assigned to dSearch. When you call dSearch("Hello"), you are calling only this inner function.
+// Since you only passed "Hello", the Rest Parameter (...args) captures exactly that: ["Hello"].
+// func and delay are not part of args because they weren't passed into dSearch; they are "remembered" from the outer scope via a closure. 
+
 //Previous timer cancelled again , New timer created , args = ["Hello, World!"] , Waiting...
 //After 100ms of NO calls search("Hello, World!");
 //✅ Only last call executes

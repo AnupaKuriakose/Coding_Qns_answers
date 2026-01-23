@@ -14,5 +14,5 @@ function findMaj(arr) {
     }
   }
 }
-console.log(findMaj([3, 3, 4, 3, 2, 3, 3]
+console.log(findMaj([3, 3, 4, 3, 2, 3, 3] //3
 ));
