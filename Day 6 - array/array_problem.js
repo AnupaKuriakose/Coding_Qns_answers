@@ -27,6 +27,7 @@ const passengers = [
 // Main Question: Get the passengers' names using the data provided 
 // Bonus Part (a)- Return vegetarians/vegans
 // Bonus Part (b)- Sort passengers by the number of connected flights in descending order
+// return obj with name and id
 
 const passengerNames = passengers.map((p)=> p.passengerName);
 console.log('passengerNames:', passengerNames);
@@ -36,3 +37,8 @@ console.log('vegan passengers:', vegans);
 
 const sortedPassList = passengers.sort((passenger1, passenger2) => passenger1.connectedFlights - passenger2.connectedFlights).map(x=> x.passengerName);
 console.log('Sorted list:', sortedPassList);
+
+const obj = passengers.map(x => {
+    return  { Name: x.passengerName, id: x.id}
+});
+console.log('obj, obj', obj);
