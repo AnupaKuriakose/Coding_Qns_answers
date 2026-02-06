@@ -1,0 +1,57 @@
+//✅ 1️⃣ Move Zeroes — REVIEW
+function moveZeroes(arr) {
+  let left = 0;
+
+  for (let right = 0; right < arr.length; right++) {
+    if (arr[right] !== 0) {
+      arr[left] = arr[right];
+      left++;
+    }
+  }
+
+  // fill remaining with zero
+  while (left < arr.length) {
+    arr[left] = 0;
+    left++;
+  }
+
+  return arr;
+}
+
+//✅ 2️⃣ Remove Element — REVIEW
+function removeElement(arr, element) {
+  let left = 0;
+
+  for (let right = 0; right < arr.length; right++) {
+    if (arr[right] !== element) {
+      arr[left] = arr[right];
+      left++;
+    }
+  }
+
+  return left; // length of valid elements
+}
+//💡 If interviewer asks for array:
+
+return arr.slice(0, left);
+
+//✅ 3️⃣ Reverse Array — PERFECT
+let start = 0;
+let end = arr.length - 1;
+
+while (start < end) {
+  [arr[start], arr[end]] = [arr[end], arr[start]];
+  start++;
+  end--;
+}
+return arr;
+
+//3️⃣ Remove Duplicates (sorted array)
+
+//Keep only unique numbers.
+left =0; right in loop 1
+
+if (nums[right] !== nums[left-1]) {
+  nums[left] = nums[right];
+  left++;
+}

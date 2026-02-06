@@ -1,0 +1,41 @@
+What is a callback function. Is it asynchronous or asynchronous, then made me write a callback function with setTimeout and few Console logs and asked me the sequence of the output and the why this will be the answer.
+
+What is a promise. Write a promise and access its response. Then he asked how resolve work in the promise also asked me to create my own resolve and there were lots of followup questions.
+
+Shallow copy and deep copy explanation along with guess the output
+
+Asked me to create a button and access it using js and then add the event listener to it and stop the bubbling of event.
+
+Sliding window que didn't ask me to write the code but they just wanted me to tell them the solution verbally and wanted to understand my thought process.
+
+Guess the output type questions - gave a code snippet of IIFE and asked me the output also asked me why IIFE was used and what IIFE
+
+
+=============
+I appeared for an interview at Oracle last week.
+
+Experience: 5.5 years
+Current Company: Service-based
+
+Round 1: DSA + Technical Discussion (1.5 hrs)
+
+Problem-solving round involving the Longest Common Substring question
+Discussion on my project experience
+Concepts around memoization and lazy loading
+A few scenario-based questions
+Questions on design patterns
+React hooks fundamentals
+Core JavaScript topics were also covered
+Round 2: Machine Coding + Deep Dive (1.5 hrs)
+
+Questions based on the technologies mentioned in my resume
+More discussion on design patterns
+Hands-on JavaScript coding (topics included higher-order functions, singleton pattern, closures)
+Questions related to the event loop
+Some output-based questions
+A few polyfill implementations
+==================
+
+https://nodeflair.com/companies/oracle/interviews
+
+https://www.frontendinterviewhandbook.com/companies/oracle-front-end-interview-questions

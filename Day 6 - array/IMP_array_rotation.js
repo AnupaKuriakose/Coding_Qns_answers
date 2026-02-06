@@ -13,12 +13,12 @@ for(let i=0; i< numberOfRotation; i++)
     arr.unshift(arr.pop());
 }
 return arr;
-
+*
 }
 console.log(arrayRotation([1,2,3,4,5], 3));
 
 //solution 2 -if not able to use slice, unshift or pop
-function rotate1(arr, numberOfRotation){
+function rotateRight(arr, numberOfRotation){
     let arr = [1,2,3,4,5];
     let k = numberOfRotation;
     k= k% arr.length; //3%5 = 3
@@ -31,9 +31,12 @@ function rotate1(arr, numberOfRotation){
         }
     }
     //first reverse the entire array
-    //reverse the firdt to k elements
+    //reverse the firdt to k elements (ie, k-1)
     //reverse k to arr.length -1 elements
-    console.log(reverse(arr, 0, arr.length-1));
+   reverse(arr, 0, arr.length-1);
+    reverse(arr, 0, k-1);
+    reverse(arr, k, arr.length -1)
+
  
 }
 
@@ -45,7 +48,47 @@ function rotateRight(arr, k) {
   return arr.slice(-k).concat(arr.slice(0, arr.length - k));
 }
 
-rotateRight([1, 2, 3, 4, 5], 2);
+rotateRight([1, 2, 3, 4, 5], 2);//means rotate right 2 positios from last  here 4,5 move to front
+
+function rotateLeft(arr, numberOfRotation){
+    
+    let k = numberOfRotation;
+    k= k% arr.length; //3%5 = 3
+    const reverse =  (arr, start, end) => {
+        while(start<end)
+        {
+            [arr[start], arr[end]] = [arr[end], arr[start]];
+            start++;
+            end--;
+        }
+    }
+    //first reverse the entire array
+    //reverse the firdt to k elements (ie, k-1)
+    //reverse k to arr.length -1 elements
+    //reverse the firdt to k elements (ie, k-1)
+    reverse(arr, 0, k-1);
+    reverse(arr, k, arr.length -1)
+   reverse(arr, 0, arr.length-1);
+   
+   return arr;
+    
+
+ 
+}
+
+function leftRotateByK(arr, k) {
+  // Handle cases where k is greater than array length
+  k = k % arr.length;
+  for (let i = 0; i < k; i++) {
+    let firstElement = arr.shift();
+    arr.push(firstElement);
+  }
+  return arr;
+}
+
+let arrK = [1, 2, 3, 4, 5];
+leftRotateByK(arrK, 2);
+console.log(arrK); // Output: [3, 4, 5, 1, 2]
 //how to caslaclulate mod here
 //2%5
 //step 1:2/5 is 0.40
