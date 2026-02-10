@@ -13,8 +13,8 @@ for(let i=0; i< numberOfRotation; i++)
     arr.unshift(arr.pop());
 }
 return arr;
-*
 }
+//******Explaination of code below how to tell while writing */
 console.log(arrayRotation([1,2,3,4,5], 3));
 
 //solution 2 -if not able to use slice, unshift or pop
@@ -98,3 +98,17 @@ console.log(arrK); // Output: [3, 4, 5, 1, 2]
 //2-0 = 2. so 2 is mod f 2 mod 5
 
 // [4, 5, 1, 2, 3]
+
+//****Explanation */
+
+//"I'll start by calculating d = d % n. 
+// This is important because if we have an array of length 5 and we rotate it 5 times, 
+// it ends up exactly where it started. 
+// If we rotate it 6 times, it's the same as rotating it just 1 time."
+//"I'm going to normalize \(d\) using the modulo operator. 
+// This handles cases where \(d\) is greater than the array length,
+// preventing unnecessary work and ensuring our index bounds stay valid."
+//"Next, I'll write a reverse helper function. I'll use a two-pointer approach to swap elements
+//  in place. This is great for memory efficiency because it gives us \(O(1)\) space complexity."
+//Now, for a left rotation, I use a three-step reversal process:Reverse the first \(d\) elements.
+// Reverse the remaining elements from \(d\) to the end.Reverse the entire array to bring everything together." 
