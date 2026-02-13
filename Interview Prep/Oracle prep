@@ -24,13 +24,13 @@ Discussion on my project experience
 Concepts around memoization and lazy loading
 A few scenario-based questions
 Questions on design patterns
-React hooks fundamentals
+React hooks fundamentalss
 Core JavaScript topics were also covered
 Round 2: Machine Coding + Deep Dive (1.5 hrs)
 
 Questions based on the technologies mentioned in my resume
 More discussion on design patterns
-Hands-on JavaScript coding (topics included higher-order functions, singleton pattern, closures)
+Hands-on JavaScript coding (topics included higher-order functions, ingleton pattern, closures)
 Questions related to the event loop
 Some output-based questions
 A few polyfill implementations

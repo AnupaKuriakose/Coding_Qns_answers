@@ -18,3 +18,5 @@ acc += item;
 return acc;
 },0);
 console.log(result1);
+// Why no thisArg?
+// Unlike map or forEach, the native reduce method does not accept a thisArg. Its primary job is to pass the accumulator forward, which acts as the "state" for the function. If you need a specific context, you must use a closure or .bind(). 
