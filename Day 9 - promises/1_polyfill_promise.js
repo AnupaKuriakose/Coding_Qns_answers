@@ -20,7 +20,8 @@ function PromisePolyFill(executor) {
     }
   }
   function reject(val) {
-isRejected = true;value = val;
+    isRejected = true;
+    value = val;
     if (typeof onReject === "function") {
       onReject(val);
       isCalled = true;

@@ -33,11 +33,9 @@ function rotateRight(arr, numberOfRotation){
     //first reverse the entire array
     //reverse the firdt to k elements (ie, k-1)
     //reverse k to arr.length -1 elements
-   reverse(arr, 0, arr.length-1);
+    reverse(arr, 0, arr.length-1);
     reverse(arr, 0, k-1);
     reverse(arr, k, arr.length -1)
-
- 
 }
 
 
@@ -50,6 +48,25 @@ function rotateRight(arr, k) {
 
 rotateRight([1, 2, 3, 4, 5], 2);//means rotate right 2 positios from last  here 4,5 move to front
 
+//if we can use push,pop, reverse
+
+function rotateRight1(arr, numberOfRotation){
+   if(arr == null || arr == undefined || arr.length == 0) return arr;
+   for (let i = 0; i < numberOfRotation; i++) {
+    //input-1,2,3,4,5 rota-3
+    //5,1,2,3,4 - 1st rotation
+    //4,5,1,2,3 -> 2nd
+    //3,4,5,1,2 -> 3rd
+    let popped = arr.pop(); //5 - 1 2 3 4
+    arr.reverse(); //4 3 2 1
+    arr.push(popped);//4 3 2 1 5
+    arr.reverse();//5 1 2 3 4
+   }
+   return arr;
+}
+
+// ==================================================================================
+// ================================================================================
 function rotateLeft(arr, numberOfRotation){
     
     let k = numberOfRotation;
@@ -62,7 +79,7 @@ function rotateLeft(arr, numberOfRotation){
             end--;
         }
     }
-    //first reverse the entire array
+    
     //reverse the firdt to k elements (ie, k-1)
     //reverse k to arr.length -1 elements
     //reverse the firdt to k elements (ie, k-1)

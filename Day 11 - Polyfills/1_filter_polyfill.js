@@ -1,18 +1,31 @@
-const arr = [1,2,3,4];
-const res = arr.filter(x=> x > 2);
+const arr = [1, 2, 3, 4];
+const res = arr.filter((x) => x > 2);
 //console.log(res)
 
-Array.prototype.myFilter = function(callback) {
-    let res =[];
- for(let i=0;i<this.length; i++)
-  {
-    if(callback(this[i]))
-    {
-        res.push(this[i]);
+Array.prototype.myFilter = function (callback) {
+  let res = [];
+  for (let i = 0; i < this.length; i++) {
+    if (callback(this[i])) {
+      res.push(this[i]);
     }
   }
-return res;
-}
-const arr1 = [1,2,3,4];
-const res1 = arr1.myFilter(x=> x > 2);
-console.log(res1)
+  return res;
+};
+const arr1 = [1, 2, 3, 4];
+const res1 = arr1.myFilter((x) => x > 2);
+console.log(res1);
+
+Array.prototype.myFilter = function (callback, thisArg) {
+  // 1. Validation (optional but recommended for interviews)
+  if (typeof callback !== "function") {
+    throw new TypeError(callback + " is not a function");
+  }
+
+  let res = [];
+  for (let i = 0; i < this.length; i++) {
+    if (i in this && callback.call(thisArg, this[i], i, this)) {
+      res.push(this[i]);
+    }
+  }
+  return res;
+};
