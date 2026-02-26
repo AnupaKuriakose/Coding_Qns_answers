@@ -36,3 +36,4 @@ function removeDuplicates2(arr)
     return result;
 }
 console.log(removeDuplicates2([1,2,2,3,5]))
+//if no new array do in curent array

@@ -1,0 +1,1 @@
+1. Sliding window fixed size - means sum, max,

@@ -33,7 +33,7 @@ function removeElement(arr, element) {
 }
 //💡 If interviewer asks for array:
 
-return arr.slice(0, left);
+return arr.slice(0, left); OR //set arr.length = left this will return arr with only valid elem
 
 //✅ 3️⃣ Reverse Array — PERFECT
 let start = 0;
@@ -48,10 +48,24 @@ return arr;
 
 //3️⃣ Remove Duplicates (sorted array)
 
-//Keep only unique numbers.
-left =0; right in loop 1
-
-if (nums[right] !== nums[left-1]) {
-  nums[left] = nums[right];
-  left++;
+//Keep only unique numbers.[1,2,2,3,4,5,5,6]
+function removeDuplicates(nums) {
+    if (nums.length === 0) return 0;
+    
+    let slow = 0; // Pointer for the last unique element
+    
+    for (let fast = 1; fast < nums.length; fast++) {
+        // If current element is different from the last unique one
+        if (nums[fast] !== nums[slow]) {
+            slow++;
+            nums[slow] = nums[fast]; // Move the unique element forward
+        }
+    }
+    
+    // Optional: Truncate array to remove leftover "tail" elements
+    nums.length = slow + 1; 
+    return nums;
 }
+
+//if sorted - best two pointers
+//not sorted - hash set/map
