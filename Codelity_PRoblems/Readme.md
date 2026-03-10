@@ -1,0 +1,1 @@
+https://leetcode.com/discuss/post/1321793/codility-assessment-questions-2021-by-an-lwdi/

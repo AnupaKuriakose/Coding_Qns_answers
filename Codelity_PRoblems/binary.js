@@ -6,3 +6,24 @@
 //0,5 -> 5-0 = 5-1 = 4 > 0
 
 //1111 => 0, 0000 => 0//edge cases
+
+function binaryGap(N) {
+    // Convert to binary string
+    let binaryN = (N >>> 0).toString(2);
+    let maxGap = 0;
+    let lastOneIndex = -1;
+
+    for (let i = 0; i < binaryN.length; i++) {
+        if (binaryN[i] === '1') {
+            // If we've seen a '1' before, calculate the gap
+            if (lastOneIndex !== -1) {
+                let currentGap = i - lastOneIndex - 1;
+                maxGap = Math.max(maxGap, currentGap);
+            }
+            // Update the last seen '1' to current position
+            lastOneIndex = i;
+        }
+    }
+
+    return maxGap;
+}
