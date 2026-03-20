@@ -14,9 +14,9 @@ function productExceptSelf(arr) {
     result[i] = leftProduct; //res 0 : 1
     leftProduct *= arr[i];
   }
-  //end of this loop: result [1,1,2,6]
+  //end of this loop: result [1,1,2,6]  
   //right products
-  let rightProduct = 1;
+  let rightProduct = 1; 
   for (let i= arr.length - 1; i>= 0; i--) {
     result[i] *= rightProduct; //first loop element at 3 -> so 4 right of 4 nothing so 1
     rightProduct *= arr[i];

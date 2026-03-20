@@ -42,3 +42,25 @@ const obj = passengers.map(x => {
     return  { Name: x.passengerName, id: x.id}
 });
 console.log('obj, obj', obj);
+
+//SOrt by passenger names
+const sortedPassList1 = passengers.sort((passenger1, passenger2) => passenger1.passengerName.localeCompare(passenger2.passengerName)).map(x=> x.passengerName);
+console.log('Sorted list:', sortedPassList1);
+//**NOTE when soring strincg dont use -, use locale string or > < */
+// //OR
+// passengers.sort((a, b) => {
+//   if (a.passengerName < b.passengerName) {
+//     return -1; // a comes first
+//   }
+//   if (a.passengerName > b.passengerName) {
+//     return 1;  // b comes first
+//   }
+//   return 0;    // names are equal
+// });
+// students.sort((a, b) => {
+//   let nameA = a.name.toLowerCase();
+//   let nameB = b.name.toLowerCase();
+//   return nameA < nameB ? -1 : nameA > nameB ? 1 : 0;
+// });
+//students.sort((a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0));
+//Greater/Less Than: JavaScript compares strings character by character based on their Unicode values.

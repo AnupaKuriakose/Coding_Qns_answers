@@ -13,3 +13,14 @@ for (let i = 0; i < arr.length; i++) {
 }
 arr.length = left;
 console.log(arr);
+
+//if using splice
+//  delete(value) {
+//     const index = this.arr.indexOf(value);
+//     if (index !== -1) {
+//       // Removes exactly ONE occurrence
+//       this.arr.splice(index, 1);
+//       return true;
+//     }
+//     return false;
+//   }

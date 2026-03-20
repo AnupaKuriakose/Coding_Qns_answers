@@ -154,6 +154,7 @@ If duplicate found → move left until valid again
 Track max length
 =====================================================
 REMEMBER this:::
+Variable need a POINTER
 
 let left = 0;
 

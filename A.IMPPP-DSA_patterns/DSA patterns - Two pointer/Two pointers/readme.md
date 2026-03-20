@@ -72,9 +72,7 @@ Sort Colors / Dutch National Flag (variation)
 Key hints:
 
 Slow only moves on “good number”
-
 Fast always moves forward
-
 O(n) time, O(1) space
 
 Two pointer problems usually change only one thing:
@@ -134,9 +132,8 @@ Intersection of Two Arrays II (LeetCode 350)
 Key hints:
 
 Compare elements at both pointers
-
 Increment pointer of smaller value
-
+========================================================================
 5️⃣ Sliding Window (Variable) → Two pointers form
 
 Pattern: Window expands and shrinks with left/right
