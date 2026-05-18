@@ -14,7 +14,7 @@ function findMaxconsecutiveOnes(arr)
     if(nums[i] === 1)
     {
         current++;
-        longest = Math.max(sum, current);
+        longest = Math.max(longest, current);
 
     }
     else{

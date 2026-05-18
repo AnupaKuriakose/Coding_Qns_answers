@@ -12,10 +12,11 @@
 // Input: n = 19
 // Output: true
 // Explanation:
-// 12 + 92 = 82
-// 82 + 22 = 68
-// 62 + 82 = 100
-// 12 + 02 + 02 = 1
+
+// 1² + 9² = 82
+// 8² + 2² = 68
+// 6² + 8² = 100
+// 1² + 0² + 0² = 1
 
 // To determine if a number is "happy" in JavaScript, you can use a Set to keep track of the numbers you've already encountered. If the process hits 1, the number is happy; if it hits a number already in the set, it’s stuck in a loop and is not happy. 
 // Here is a concise implementation:

@@ -54,6 +54,34 @@ function validPalindrome(s) {
 console.log(validPalindrome("abca")); 
 // true
 
+/***MORE CLEANER 
+ * Parameterize "Skips": By using a k parameter, you can easily change this to allow 2 or 3 character deletions if the requirements ever change.
+*/
+function isPalindrome(str, k = 1) {
+  // 1. Clean string: lowercase and remove all non-alphanumeric chars globally
+  const s = str.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+  const check = (left, right, allowance) => {
+    while (left < right) {
+      if (s[left] !== s[right]) {
+        // If we still have an "allowance" (k), try skipping one side
+        if (allowance > 0) {
+          return check(left + 1, right, allowance - 1) || 
+                 check(left, right - 1, allowance - 1);
+        }
+        return false;
+      }
+      left++;
+      right--;
+    }
+    return true;
+  };
+
+  return check(0, s.length - 1, k);
+}
+
+console.log(isPalindrome("Amamat")); // true
+
 console.log(validPalindrome("racecar"));
 // true
 

@@ -24,5 +24,3 @@ function countOccurance(arr, k)
    }
    return count;
 }
-
-console.log(countOccurance( [3, 4, 2, 2, 1, 2, 3, 3], 4))

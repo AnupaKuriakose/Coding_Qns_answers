@@ -16,8 +16,10 @@
 // 2. Why no let and how is it collected?
 // Class Syntax (Why no let)
 // In JavaScript classes, you do not use let, const, or var to declare properties.
-// Inside the constructor: Using this.capacity creates an instance property. It belongs specifically to the object created by new LRUCache().
-// Outside the constructor: Modern JS allows Class Fields (e.g., capacity = 0; at the top), but still without let.
+// Inside the constructor: Using this.capacity creates an instance property. 
+// It belongs specifically to the object created by new LRUCache().
+// Outside the constructor: Modern JS allows Class Fields (e.g., capacity = 0; at the top),
+//  but still without let.
 // Scope and Garbage Collection (GC)
 // Using this.capacity does not make the variable global.
 // Scope: The property is scoped to the specific instance of the class. If you have cacheA and cacheB, they each have their own independent capacity and cache Map.

@@ -1,3 +1,9 @@
+
+
+//"I use a stack and a hashmap — the map pairs each closing bracket 
+// with its expected opening bracket. I iterate through — opening brackets get pushed to
+//  the stack, closing brackets pop the stack and check for a match. 
+// If the stack is empty at the end, all brackets were properly closed. O(n) time, O(n) space."
 function areBracketsBalanced(s) {
     let stack = [];
     let map = {

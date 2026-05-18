@@ -38,6 +38,20 @@ function rotateRight(arr, numberOfRotation){
     reverse(arr, k, arr.length -1)
 }
 
+//****Explanation */
+
+//"I'll start by calculating d = d % n. 
+// This is important because if we have an array of length 5 and we rotate it 5 times, 
+// it ends up exactly where it started. 
+// If we rotate it 6 times, it's the same as rotating it just 1 time."
+//"I'm going to normalize \(d\) using the modulo operator. 
+// This handles cases where \(d\) is greater than the array length,
+// preventing unnecessary work and ensuring our index bounds stay valid."
+//"Next, I'll write a reverse helper function. I'll use a two-pointer approach to swap elements
+//  in place. This is great for memory efficiency because it gives us \(O(1)\) space complexity."
+//Now, for a left rotation, I use a three-step reversal process:Reverse the first \(d\) elements.
+// Reverse the remaining elements from \(d\) to the end.Reverse the entire array to bring everything together." 
+
 
 //solutiomn3
 function rotateRight(arr, k) {
@@ -83,8 +97,12 @@ function rotateLeft(arr, numberOfRotation){
     //reverse the firdt to k elements (ie, k-1)
     //reverse k to arr.length -1 elements
     //reverse the firdt to k elements (ie, k-1)
+    // To rotate LEFT by k:
+        // 1. Reverse the first k elements
     reverse(arr, 0, k-1);
+    // 2. Reverse the rest of the elements
     reverse(arr, k, arr.length -1)
+    //reverse array
    reverse(arr, 0, arr.length-1);
    
    return arr;
@@ -115,17 +133,3 @@ console.log(arrK); // Output: [3, 4, 5, 1, 2]
 //2-0 = 2. so 2 is mod f 2 mod 5
 
 // [4, 5, 1, 2, 3]
-
-//****Explanation */
-
-//"I'll start by calculating d = d % n. 
-// This is important because if we have an array of length 5 and we rotate it 5 times, 
-// it ends up exactly where it started. 
-// If we rotate it 6 times, it's the same as rotating it just 1 time."
-//"I'm going to normalize \(d\) using the modulo operator. 
-// This handles cases where \(d\) is greater than the array length,
-// preventing unnecessary work and ensuring our index bounds stay valid."
-//"Next, I'll write a reverse helper function. I'll use a two-pointer approach to swap elements
-//  in place. This is great for memory efficiency because it gives us \(O(1)\) space complexity."
-//Now, for a left rotation, I use a three-step reversal process:Reverse the first \(d\) elements.
-// Reverse the remaining elements from \(d\) to the end.Reverse the entire array to bring everything together." 

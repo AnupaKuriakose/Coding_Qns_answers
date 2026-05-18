@@ -1,0 +1,57 @@
+1.How would you create a phone number input component in React that validates and formats the input dynamically?
+
+use react -hone-number-input library or if manually we need to create see below
+
+2.When building a recursive navigation menu, what strategy would you use to emphasize the active link and its path?
+
+3.What are the steps to implement pagination in a Front-End context?
+4.Could you write the code for the produce() function in Immer for immutable state management in JavaScript?
+
+1.
+import { useForm } from "react-hook-form";
+
+export function SimplePhoneForm() {
+  const { register, handleSubmit, setValue, formState: { errors } } = useForm();
+
+  // 1. Manual Formatter Function
+  const formatPhoneNumber = (value) => {
+    if (!value) return value;
+    const phoneNumber = value.replace(/[^\d]/g, ""); // strip non-digits
+    const phoneNumberLength = phoneNumber.length;
+    
+    if (phoneNumberLength < 4) return phoneNumber;
+    if (phoneNumberLength < 7) {
+      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
+    }
+    return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`;
+  };
+
+  const handlePhoneChange = (e) => {
+    const formattedValue = formatPhoneNumber(e.target.value);
+    // 2. Manually update the value so it looks pretty while typing
+    setValue("phoneNumber", formattedValue); 
+  };
+
+  const onSubmit = (data) => console.log("Final Data:", data);
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <label>Phone Number:</label>
+      <input
+        type="tel"
+        placeholder="(555) 555-5555"
+        {...register("phoneNumber", {
+          required: "Phone is required",
+          onChange: handlePhoneChange, // 3. Hook into the change event
+          pattern: {
+            value: /^\(\d{3}\) \d{3}-\d{4}$/,
+            message: "Format must be (XXX) XXX-XXXX"
+          }
+        })}
+      />
+      {errors.phoneNumber && <p style={{ color: 'red' }}>{errors.phoneNumber.message}</p>}
+      
+      <button type="submit">Submit</button>
+    </form>
+  );
+}

@@ -7,32 +7,52 @@
 //2 solutions- qn can be array of strings or numbers right and any dynamic also
 
 //Solution 1:if list is dynamic
-function sortColors1(nums) {
-  let countsMap = {};
-  //count of each entry
-  for(let i=0; i<nums.length; i++)
-  {
-    let ele= nums[i];
-    countsMap[ele] = (countsMap[ele] || 0) +1;
+// Function Definition
+f/**
+* Quick Sort implementation for numbers with duplicates
+ * @param {number[]} arr 
+ * @returns {number[]}
+ */
+function quickSort(arr) {
+  // Base case: arrays with 0 or 1 element are already sorted
+  if (arr.length <= 1) {
+    return arr;
   }
-  //get unique keys sort them
-  const uniqueKeys = Array.from(countsMap.keys()).sort();
-  //overwrite original array
-  let index=0;
-  for(let key of uniqueKeys)
-  {
-    let num = countsMap[key];
-    num.fill(key, index, num);
-    // if not allowed to use fill then manual fill logic anagin array
+
+  const pivot = arr[Math.floor(arr.length / 2)];
+  const left = [];
+  const middle = [];
+  const right = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    const current = arr[i];
+    if (current < pivot) {
+      left.push(current);
+    } else if (current > pivot) {
+      right.push(current);
+    } else {
+      // Handles duplicates by grouping them in the middle
+      middle.push(current);
+    }
+  }
+
+  // Spread operator is used here for concatenation, 
+  // but you could use a loop to merge if that's also restricted.
+  return [...quickSort(left), ...middle, ...quickSort(right)];
+}
+
+// Example usage:
+const unsorted = [5, 2, 9, 1, 5, 6, 2];
+const sorted = quickSort(unsorted);
+console.log(sorted); // [1, 2, 2, 5, 5, 6, 9]
+
+
+// if not allowed to use fill then manual fill logic anagin array
 // Manual "Fill" logic
         // for (let j = 0; j < num; j++) {
         //     arr[writeIdx] = key;
         //     writeIdx++;
         // }
-    index += num;
-  }
-  return arr;
-}
 
 //Solotion 2: if it is dutch flag exact problem/exact 3 numbers 
 //IF interbiewer specifi about one loop
