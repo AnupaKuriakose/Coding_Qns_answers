@@ -49,7 +49,8 @@ function rotateRight(arr, numberOfRotation){
 // preventing unnecessary work and ensuring our index bounds stay valid."
 //"Next, I'll write a reverse helper function. I'll use a two-pointer approach to swap elements
 //  in place. This is great for memory efficiency because it gives us \(O(1)\) space complexity."
-//Now, for a left rotation, I use a three-step reversal process:Reverse the first \(d\) elements.
+//Now, for a left rotation, 
+// I use a three-step reversal process:Reverse the first \(d\) elements.
 // Reverse the remaining elements from \(d\) to the end.Reverse the entire array to bring everything together." 
 
 
