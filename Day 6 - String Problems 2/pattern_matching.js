@@ -22,6 +22,4 @@ function isPatternInstring(pattern, text) {
  return pointerPattern === patternLength;
 }
 
-console.log(isPatternInstring("abcd", "axcmxbbxxxccxd"));
-// Case 2: Wrong order ('c' comes before 'b')
-console.log(isPatternInstring("abcd", "axxxccxxxbbxd")); // Output: false
+console.log(isPatternInstring("abcd", "axxxbbxxxccxd"));
